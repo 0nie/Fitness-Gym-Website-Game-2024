@@ -578,6 +578,28 @@ button:active {
   margin: 0;
 }
 
+.scrollup{
+  color: #fff;
+  position: fixed;
+  right: 2rem;
+  bottom: -30%;
+  background-color: var(--primary-color);
+  display: inline-flex;
+  padding: .35rem;
+  font-size: 1.25rem;
+  z-index: 10;
+  transition: 1s;
+  scroll-behavior: smooth;
+}
+
+.show-scroll{
+  bottom: 3rem;
+}
+
+.scrollup{
+  transform: translateY(-.35rem);
+}
+
 
 
 

@@ -2,6 +2,8 @@ const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
 
+
+
 //Calculate BMI
 const calculateForm = document.getElementById("calculate-form");
       calculateCm = document.getElementById("calculate-cm");
@@ -60,19 +62,39 @@ const calculateBmi = (e) => {
 calculateForm.addEventListener('submit', calculateBmi)
 
 
+//scoll up
+const scrollUp = () => {
+    const scrollUp = document.getElementById('scroll-up');
+    // When the scroll is higher than 350 viewport height, the scroll up will appear 
+    if (window.scrollY >= 350) {
+        scrollUp.classList.add('show-scroll');
+    } else {
+        scrollUp.classList.remove('show-scroll');
+    }
+};
+
+window.addEventListener('scroll', scrollUp);
 
 
+//when the user click the "i" the links will open
 menuBtn.addEventListener("click", (e) => {
-  navLinks.classList.toggle("open");
-
-  const isOpen = navLinks.classList.contains("open");
-  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+    navLinks.classList.toggle("open");
+    //if ther user click the "i" it will change to "x" icon
+    const isOpen = navLinks.classList.contains("open");
+    menuBtnIcon.setAttribute("class", isOpen? "ri-close-line": "ri-menu-line");
 });
 
 navLinks.addEventListener("click", (e) => {
-  navLinks.classList.remove("open");
-  menuBtnIcon.setAttribute("class", "ri-menu-line");
+    navLinks.classList.remove("open");
+    menuBtnIcon.setAttribute("class","ri-menu-line");
 });
+
+
+
+function redirectToContactPage() {
+    // Replace 'contact.html' with the actual path to your contact page
+    window.location.href = 'contact.html';
+}
 
 const scrollRevealOption = {
   distance: "50px",
